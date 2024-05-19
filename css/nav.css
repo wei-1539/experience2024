@@ -1,0 +1,213 @@
+nav {
+    /* max-width: 1000px; */
+    margin: 0 auto;
+    padding: 32px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgb(255, 255, 255, 0.8);
+}
+
+.logo {
+    width: 90px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.SP_btn {
+    display: none;
+}
+
+.navList {
+    display: flex;
+    justify-content: center;
+    gap: 40px
+}
+
+.navItem {
+    position: relative;
+}
+
+.navLink {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.border {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+/* hover */
+
+.navLink:hover~.border {
+    transition: all .3s;
+    opacity: 1;
+}
+
+.navLink:hover {
+    font-weight: 600;
+}
+
+/* footer */
+footer {
+    background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2024%20web-camp/footer-bg-lg.png?raw=true);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.footerControl {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    width: 120px;
+}
+
+.footer-title {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.footer-titleSec {
+    line-height: 24px;
+    color: #919191;
+}
+
+.footerItem {
+    display: flex;
+    align-items: center;
+    border: 1px solid #c1c1c1;
+    padding: 8px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all .3s;
+}
+
+.footerItem img {
+    width: 56px;
+    margin-right: 8px;
+}
+
+.footerItem img:first-child {
+    filter: brightness(0);
+}
+
+.footerItem p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.footerItem:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.footerItem:hover img {
+    filter: brightness(10);
+}
+
+
+@media (max-width:768px) {
+    nav{
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
+    }
+    .navList {
+        flex-direction: column;
+        position: absolute;
+        background-color: rgb(255, 255, 255, 0.8);
+        top: 100%;
+        width: 100%;
+        align-items: center;
+        left: 0;
+        clip-path: inset(0 0 100% 0);
+        transition: all .3s;
+        gap: 0;
+    }
+
+    .navList--active {
+        clip-path: inset(0 0 0 0);
+    }
+
+    .navItem {
+        padding: 2.5% 0;
+    }
+
+    .SP_btn {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 5%;
+        cursor: pointer;
+    }
+
+    .SP_btn i {
+        font-size: 40px;
+    }
+
+
+    footer {
+        background-image: url(https://raw.githubusercontent.com/hexschool/2022-web-layout-training/d796f511bed88b5468b1c02b9dc1f17048b1448f/2024%20web-camp/footer-bg-sm.png);
+        padding: 40px 0;
+    }
+
+    .footerLeft {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .footer-logo {
+        margin: 0 auto;
+    }
+
+    .footerControl {
+        flex-direction: column;
+    }
+
+    .footerList {
+        width: 87.25%;
+        margin: 0 auto;
+    }
+}
